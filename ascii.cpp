@@ -1,6 +1,13 @@
 #include <iostream>
 #include <cstdlib>
 #include "random.cpp"
+
+#ifdef __linux__
+    #define CLEAR_COMMAND "clear"
+#elif _WIN32
+    #define CLEAR_COMMAND "cls"
+#endif
+
 // Esta es la funcion para practicar
 int startPractice(){
 	std::cout<<"\n\tComenzando la practica\n";
@@ -79,6 +86,7 @@ int startPractice(){
 
 	return 0;
 }
+
 // Esta funcion Muestra todas las letras A-Z y a-z con su respectivo codigo ASCII
 int showAsciiLetters(){
 	std::cout<<"Code\tCharacter\n";
@@ -136,7 +144,7 @@ int main(){
 			startPractice();
 		}
 		else if(option==6){
-			system("clear");
+			system(CLEAR_COMMAND);
 		}
 		else{
 			std::cout<<"\vOPCION NO RECONOCIDA\n";
